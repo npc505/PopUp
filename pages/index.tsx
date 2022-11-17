@@ -33,9 +33,6 @@ export default function Home() {
             </div>
             <div className="lc-block mb-3">
               <div>
-                <p className="lead">
-                  Sit ipsum velit fugiat cupidatat do incididunt in culpa deserunt consectetur consectetur. Ex aliqua nisi veniam magna ipsum do laboris tempor culpa magna nostrud cupidatat.
-                </p>
               </div>
             </div>
             <div className="lc-block d-grid gap-2 d-md-flex justify-content-md-start">

@@ -99,7 +99,10 @@ export default function Home() {
       </Container>
       <Container>
         <h3 className='fw-bold display-5 text-center'>Conoce al equipo</h3>
-        
+        <Row>
+          <Col>
+          </Col>
+        </Row>
       </Container>
 
       

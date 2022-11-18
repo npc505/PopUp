@@ -15,11 +15,18 @@ const ContainerW75 = styled(Container)`
   }
 `;
 
+const TeamImage = styled.img`
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+`;
+
 export default function Home() {
   return (
     <>
       <Header />
-      <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
+      <Container fluid className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
             <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
@@ -100,12 +107,30 @@ export default function Home() {
       <Container>
         <h3 className='fw-bold display-5 text-center'>Conoce al equipo</h3>
         <Row>
-          <Col>
+          <Col sm={6} md={4}>
+            <Container style={{ border: '1px solid #B8B8B8', borderRadius: '10%' }} className='shadow py-3' >
+              <TeamImage src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' className='mx-auto d-block' />
+              <h5 className='text-center pt-2'>Carlos Jones</h5>
+              <p className='text-center text-muted'>Illustrator</p>
+            </Container>
+          </Col>
+          <Col sm={6} md={4}>
+            2
+          </Col>
+          <Col sm={6} md={4}>
+            3
+          </Col>
+          <Col sm={6} md={4}>
+            4
+          </Col>
+          <Col sm={6} md={4}>
+            5
+          </Col>
+          <Col sm={6} md={4}>
+            6
           </Col>
         </Row>
       </Container>
-
-      
     </>
   )
 }

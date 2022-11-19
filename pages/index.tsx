@@ -1,9 +1,13 @@
-import Head from 'next/head'
-import styled from 'styled-components'
-import { Col, Container, Row, Button, Stack } from 'react-bootstrap'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Head from 'next/head';
+import styled from 'styled-components';
+import { Col, Container, Row, Button, Stack } from 'react-bootstrap';
+import Slider from "react-slick";
 import Header from '../src/components/Header'
-import styles from '../styles/Home.module.css'
-import { AiFillPlayCircle } from "react-icons/ai";
+import styles from '../styles/Home.module.css';
+import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
+import team from '../src/assets/data/team.json';
 
 const BtnGreen = styled(Button)`
   background-color: #122620 !important;
@@ -15,18 +19,57 @@ const ContainerW75 = styled(Container)`
   }
 `;
 
-const TeamImage = styled.img`
+const ProfileImage = styled.img`
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
 `;
 
+const TeamCard = styled(Container)`
+  border: 1px solid #B8B8B8;
+  border-radius: 10%;
+  min-height: 10rem;
+  max-height: 20rem;
+  min-width: 10rem;
+  max-width: 18rem;
+`;
+
+const ValorationCard = styled(Container)`
+  border: 1px solid #B8B8B8;
+  border-radius: 15%;
+  max-width: 95%;
+  min-height: 20rem;
+`;
+
+const teamDisplay = team.map(member => {
+  return (
+    <Col sm={6} md={4} className='py-3'>
+      <TeamCard className= {member.shadow + ' py-5'}>
+        <ProfileImage src={member.img} className='mx-auto d-block' />
+        <h5 className='text-center pt-4 pb-2'>{member.name}</h5>
+        <p className='text-center text-muted'>{member.job}</p>
+      </TeamCard>
+    </Col>
+  );
+});
+
 export default function Home() {
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 5,
+    speed: 500,
+    arrows: false,
+  };
+
   return (
     <>
       <Header />
-      <Container fluid className='flex-lg-row-reverse align-items-center g-5 py-5'>
+      <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
             <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
@@ -34,8 +77,8 @@ export default function Home() {
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
               <div>
-                <h2 className="fw-bold display-5">Proyecto</h2>
-                <h2 className="fw-bold display-5">Tulum</h2>
+                <h1 className="fw-bold h1">Proyecto</h1>
+                <h1 className="fw-bold h1">Tulum</h1>
               </div>
             </div>
             <div className="lc-block mb-3">
@@ -54,7 +97,7 @@ export default function Home() {
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
               <div>
-                <h3 className="fw-bold display-5">Impulsado por gente con talento</h3>
+                <h1 className="fw-bold h2">Impulsado por gente con talento</h1>
               </div>
             </div>
             <div className="lc-block mb-3">
@@ -88,7 +131,7 @@ export default function Home() {
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
               <div>
-                <h3 className="fw-bold display-5">Todo es transparente en Ethereum y gestionado por constructura XYZ</h3>
+                <h1 className="fw-bold h2">Todo es transparente en Ethereum y gestionado por constructura XYZ</h1>
               </div>
             </div>
             <div className="lc-block mb-3">
@@ -105,32 +148,55 @@ export default function Home() {
         </Row>
       </Container>
       <Container>
-        <h3 className='fw-bold display-5 text-center'>Conoce al equipo</h3>
+        <h1 className='fw-bold h2 text-center pb-5'>Conoce al equipo</h1>
         <Row>
-          <Col sm={6} md={4}>
-            <Container style={{ border: '1px solid #B8B8B8', borderRadius: '10%' }} className='shadow py-3' >
-              <TeamImage src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' className='mx-auto d-block' />
-              <h5 className='text-center pt-2'>Carlos Jones</h5>
-              <p className='text-center text-muted'>Illustrator</p>
-            </Container>
-          </Col>
-          <Col sm={6} md={4}>
-            2
-          </Col>
-          <Col sm={6} md={4}>
-            3
-          </Col>
-          <Col sm={6} md={4}>
-            4
-          </Col>
-          <Col sm={6} md={4}>
-            5
-          </Col>
-          <Col sm={6} md={4}>
-            6
-          </Col>
+          { teamDisplay }
         </Row>
       </Container>
+      <Container>
+        <h1 className='fw-bold h2 text-center pb-5'>Galería de la obra</h1>
+      </Container>
+      <Slider {...settings}>
+        <ValorationCard>
+          <ProfileImage src="https://images.unsplash.com/photo-1605993439219-9d09d2020fa5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className='mx-auto d-block mt-3' />
+          <Container className="mx-auto py-2" style={{ width: '90%' }} >
+            <div className="hstack gap-3">
+              <AiFillStar color="FFC107" />
+              <AiFillStar color="FFC107" />
+              <AiFillStar color="FFC107" />
+              <AiFillStar color="FFC107" />
+              <AiFillStar color="FFC107" />
+            </div>
+          </Container>
+          <p className="text-center">
+            “My experience with Mark is a complete success, from customer service, wide rang of products, clean store, purchasing experience
+          </p>
+          <p className="text-center">
+            Samantha Kate
+          </p>
+          <p className="text-center">
+            CEO of Floatcom
+          </p>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 2</h2>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 3</h2>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 4</h2>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 5</h2>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 6</h2>
+        </ValorationCard>
+        <ValorationCard>
+          <h2>Review 7</h2>
+        </ValorationCard>
+      </Slider>
     </>
-  )
+  );
 }

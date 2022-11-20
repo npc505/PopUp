@@ -2,12 +2,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Head from 'next/head';
 import styled from 'styled-components';
-import { Col, Container, Row, Button, Stack } from 'react-bootstrap';
+import { Col, Container, Row, Button, Stack, Form } from 'react-bootstrap';
 import Slider from "react-slick";
 import Header from '../src/components/Header'
-import styles from '../styles/Home.module.css';
+import Footer from "../src/components/Footer";
 import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import team from '../src/assets/data/team.json';
+import reviews from '../src/assets/data/review.json';
 
 const BtnGreen = styled(Button)`
   background-color: #122620 !important;
@@ -37,9 +38,9 @@ const TeamCard = styled(Container)`
 
 const ValorationCard = styled(Container)`
   border: 1px solid #B8B8B8;
-  border-radius: 15%;
-  max-width: 95%;
-  min-height: 20rem;
+  border-radius: 75px;
+  width: 90%;
+  height: auto;
 `;
 
 const teamDisplay = team.map(member => {
@@ -53,6 +54,34 @@ const teamDisplay = team.map(member => {
     </Col>
   );
 });
+
+const reviewDisplay = reviews.map(review => {
+  return(
+    <ValorationCard className='py-4'>
+      <ProfileImage src={review.image} className='mx-auto d-block mt-3' />
+      <Container className="mx-auto p-0 py-2" style={{ width: '90%' }} >
+        <div className="hstack gap-3">
+          <AiFillStar color="FFC107" />
+          <AiFillStar color="FFC107" />
+          <AiFillStar color="FFC107" />
+          <AiFillStar color="FFC107" />
+          <AiFillStar color="FFC107" />
+        </div>
+      </Container>
+      <p className="text-center">
+        <small>
+          “{review.message}
+        </small>
+      </p>
+      <p className="text-center">
+        {review.name}
+      </p>
+      <p className="text-center">
+        {review.job}
+      </p>
+    </ValorationCard>
+  );
+})
 
 export default function Home() {
 
@@ -147,6 +176,7 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
+
       <Container>
         <h1 className='fw-bold h2 text-center pb-5'>Conoce al equipo</h1>
         <Row>
@@ -157,46 +187,43 @@ export default function Home() {
         <h1 className='fw-bold h2 text-center pb-5'>Galería de la obra</h1>
       </Container>
       <Slider {...settings}>
-        <ValorationCard>
-          <ProfileImage src="https://images.unsplash.com/photo-1605993439219-9d09d2020fa5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className='mx-auto d-block mt-3' />
-          <Container className="mx-auto py-2" style={{ width: '90%' }} >
-            <div className="hstack gap-3">
-              <AiFillStar color="FFC107" />
-              <AiFillStar color="FFC107" />
-              <AiFillStar color="FFC107" />
-              <AiFillStar color="FFC107" />
-              <AiFillStar color="FFC107" />
-            </div>
-          </Container>
-          <p className="text-center">
-            “My experience with Mark is a complete success, from customer service, wide rang of products, clean store, purchasing experience
-          </p>
-          <p className="text-center">
-            Samantha Kate
-          </p>
-          <p className="text-center">
-            CEO of Floatcom
-          </p>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 2</h2>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 3</h2>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 4</h2>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 5</h2>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 6</h2>
-        </ValorationCard>
-        <ValorationCard>
-          <h2>Review 7</h2>
-        </ValorationCard>
+        { reviewDisplay }
       </Slider>
+
+      <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
+        <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
+          <Col className='col-lg-6'>
+            <div className="lc-block mb-3">
+              <div>
+                <h1 className="fw-bold h2">Necesitas ayuda con tu decisión?</h1>
+              </div>
+            </div>
+            <div className="mb-3">
+              <Form>
+                <Form.Group className="mb-3" controlId="name">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter name" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="message">
+                  <Form.Label>Message</Form.Label>
+                  <Form.Control as="textarea" rows={3} />
+                </Form.Group>
+                <Button type="submit" style={{ backgroundColor: '#122620' }} >
+                  Submit
+                </Button>
+              </Form>
+            </div>
+          </Col>
+          <Col className='col-10 col-sm-8 col-lg-6'>
+            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
     </>
   );
 }

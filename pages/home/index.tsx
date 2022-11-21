@@ -55,7 +55,7 @@ const HihglightCol = styled(Row)`
 
 const teamDisplay = team.map(member => {
   return (
-    <Col sm={6} md={4} className='py-3'>
+    <Col sm={6} md={4} className='py-3' key={member.name}>
       <TeamCard className= {member.shadow + ' py-5'}>
         <ProfileImage src={member.img} className='mx-auto d-block' />
         <h5 className='text-center pt-4 pb-2'>{member.name}</h5>
@@ -67,7 +67,7 @@ const teamDisplay = team.map(member => {
 
 const reviewDisplay = reviews.map(review => {
   return(
-    <Container>
+    <Container key={review.name}>
       <ValorationCard className='py-5 mx-auto'>
         <ProfileImage src={review.image} className='mx-auto d-block mt-3' />
         <div className="w-50 mx-auto d-flex justify-content-evenly py-3">

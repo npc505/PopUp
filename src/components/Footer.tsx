@@ -32,7 +32,7 @@ export default function Footer() {
           </Form>
         </Col>
         <Col md={3}>
-          <p className="h6">
+          <p className="fw-bold h6">
             Recursos
           </p>
           <ListGroup>
@@ -57,7 +57,7 @@ export default function Footer() {
           </ListGroup>
         </Col>
         <Col md={3}>
-          <p className="h6">
+          <p className="fw-bold h6">
             Dirección
           </p>
           <ListGroup>

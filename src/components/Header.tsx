@@ -28,9 +28,10 @@ export default function Header() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Investment</Nav.Link>
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/investment">Investment</Nav.Link>
               <Nav.Link href="#action2">Dashboard</Nav.Link>
+              <Nav.Link href="/marketplace">Marketplace</Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

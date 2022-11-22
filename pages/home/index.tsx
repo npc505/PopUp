@@ -14,12 +14,7 @@ import Link from "next/link";
 
 const BtnGreen = styled(Button)`
   background-color: #122620 !important;
-`;
-
-const ContainerW75 = styled(Container)`
-  @media(min-width: 768px) {
-    width: 75% !important;
-  }
+  border: none;
 `;
 
 const ProfileImage = styled.img`

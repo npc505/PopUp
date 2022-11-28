@@ -11,7 +11,7 @@ import { FiExternalLink } from "react-icons/fi";
 import team from '../../src/assets/data/team.json';
 import reviews from '../../src/assets/data/review.json';
 import Link from "next/link";
-import { BtnGreen } from "../../src/components/assets";
+import { BtnGreen } from "../../src/components/BtnGreen";
 
 const ProfileImage = styled.img`
   border-radius: 50%;

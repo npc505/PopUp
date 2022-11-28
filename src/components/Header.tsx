@@ -1,6 +1,6 @@
 import { Container, Navbar, Offcanvas, Nav, Button } from "react-bootstrap";
 import styled from 'styled-components';
-import { BtnGreen } from "./assets";
+import { BtnGreen } from "./BtnGreen";
 
 const ContainerW75 = styled(Container)`
   @media(min-width: 768px) {

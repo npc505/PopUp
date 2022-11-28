@@ -8,7 +8,7 @@ import { TbWorld } from "react-icons/tb";
 import { BsBricks } from "react-icons/bs";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import TokenCard from "../../src/components/TokenCard";
-import { BtnGreen } from "../../src/components/assets";
+import { BtnGreen } from "../../src/components/BtnGreen";
 
 const ProfileImage = styled.img`
   border-radius: 50%;

@@ -16,19 +16,23 @@ export default function Footer() {
     <Container fluid className="pt-3">
       <Row>
         <Col md={3}>
-          <h1>Reserva Kax</h1>
+          <img src="https://drive.google.com/uc?export=view&id=1aPeb-WIBgd-_LANhgbzKCgTiaW3OPJhx" className="img-fluid w-75 mx-auto" />
         </Col>
         <Col md={3}>
           <p className="h6">
             Suscribete al Newslatter
           </p>
           <Form className='d-flex'>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-            <Button className='btn' type="submit">
-              Submit
-            </Button>
+            <Col xs='auto'>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
+            </Col>
+            <Col xs='auto'>
+              <BtnGreen className='btn' type="submit">
+                Submit
+              </BtnGreen>
+            </Col>
           </Form>
         </Col>
         <Col md={3}>
@@ -36,22 +40,22 @@ export default function Footer() {
             Recursos
           </p>
           <ListGroup>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1" style={{ backgroundColor: 'transparent' }}>
               Terminos y Condiciones
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2" style={{ backgroundColor: 'transparent' }}>
               Whitepaper
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1" style={{ backgroundColor: 'transparent' }}>
               Etherscan del Funding Voucher
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2" style={{ backgroundColor: 'transparent' }}>
               Etherscan del NFT del producto
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link1" style={{ backgroundColor: 'transparent' }}>
               Documentos
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2">
+            <ListGroup.Item className='border-0 p-0 pb-1' action href="#link2" style={{ backgroundColor: 'transparent' }}>
               Videos
             </ListGroup.Item>
           </ListGroup>
@@ -61,10 +65,10 @@ export default function Footer() {
             Dirección
           </p>
           <ListGroup>
-            <ListGroup.Item className='border-0 p-0 pb-1'>
+            <ListGroup.Item className='border-0 p-0 pb-1'  style={{ backgroundColor: 'transparent' }}>
               +52 6622 1432
             </ListGroup.Item>
-            <ListGroup.Item className='border-0 p-0 pb-1'>
+            <ListGroup.Item className='border-0 p-0 pb-1'  style={{ backgroundColor: 'transparent' }}>
               <p className="p-0 m-0">Ave. Corregidora 52</p>
               <p className="p-0 m-0">Lomas de Chapultepec</p>
               <p className="p-0 m-0">CDMX</p>
@@ -72,7 +76,7 @@ export default function Footer() {
           </ListGroup>
         </Col>
       </Row>
-      <Row className="p-0 text-light" style={{ backgroundColor: '#122620' }}>
+      <Row className="py-2 text-light" style={{ backgroundColor: '#2A4038' }}>
         <Col md={8}>
           <p className="my-1">
             <small>

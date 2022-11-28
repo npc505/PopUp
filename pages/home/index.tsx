@@ -11,11 +11,7 @@ import { FiExternalLink } from "react-icons/fi";
 import team from '../../src/assets/data/team.json';
 import reviews from '../../src/assets/data/review.json';
 import Link from "next/link";
-
-const BtnGreen = styled(Button)`
-  background-color: #122620 !important;
-  border: none;
-`;
+import { BtnGreen } from "../../src/components/assets";
 
 const ProfileImage = styled.img`
   border-radius: 50%;
@@ -146,7 +142,7 @@ export default function Home() {
       <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
@@ -155,9 +151,7 @@ export default function Home() {
                 <h1 className="fw-bold h1">Kaax</h1>
               </div>
             </div>
-            <div className="lc-block d-grid gap-2 d-md-flex justify-content-md-start">
-              <a className="btn btn-primary px-4 me-md-2" href="#" role="button" style={{backgroundColor: '#122620'}}>Descargar Whitepaper</a>
-            </div>
+            <BtnGreen>Descargar Whitepaper</BtnGreen>
           </Col>
         </Row>
       </Container>
@@ -178,11 +172,11 @@ export default function Home() {
             </div>
             <Stack direction="horizontal" gap={3}>
               <BtnGreen>Invertir</BtnGreen>
-              <div><AiFillPlayCircle size={50} color={'#B68D40'} /> Ver vídeos</div>
+              <div><AiFillPlayCircle size={50} color={'#A9D9CE'} /> Ver vídeos</div>
             </Stack>
           </Col>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
         </Row>
       </Container>
@@ -251,7 +245,7 @@ export default function Home() {
       <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
@@ -317,7 +311,7 @@ export default function Home() {
             </div>
           </Col>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid" alt="" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
         </Row>
       </Container>

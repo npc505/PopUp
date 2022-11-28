@@ -7,11 +7,8 @@ import Footer from "../../src/components/Footer";
 import { TbWorld } from "react-icons/tb";
 import { BsBricks } from "react-icons/bs";
 import { HiArrowsUpDown } from "react-icons/hi2";
-
-const BtnGreen = styled(Button)`
-  background-color: #122620 !important;
-  border: none;
-`;
+import TokenCard from "../../src/components/TokenCard";
+import { BtnGreen } from "../../src/components/assets";
 
 const ProfileImage = styled.img`
   border-radius: 50%;
@@ -32,14 +29,14 @@ export default function Investment() {
   return(
     <>
       <Header />
-      <ContainerW50 className="mx-auto border p-5">
+      <ContainerW50 className="mx-auto border p-5 mt-5">
         <h1 className="fw-bold h3">Antes de Invertir</h1>
         <p>
             Tienes que completar unos pasos para asegurarnos que todo salga bien.
         </p>
         <Row className="pt-3">
             <Col lg={6}>
-                <TbWorld className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#B68D40'}} />
+                <TbWorld className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
                 <p className="fw-bold">
                     Verificación KYC
                 </p>
@@ -49,7 +46,7 @@ export default function Investment() {
                 <BtnGreen>Completar</BtnGreen>
             </Col>
             <Col lg={6}>
-                <BsBricks className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#B68D40'}} />
+                <BsBricks className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
                 <p className="fw-bold">
                     Aceptar terminos & condiciones
                 </p>
@@ -63,7 +60,7 @@ export default function Investment() {
       <Container style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
         <Row>
             <Col lg={6}>
-                <h1 className="fw-bold h3">Miembro Tulum...</h1>
+                <TokenCard></TokenCard>
             </Col>
             <Col lg={6}>
                 <Container className="w-75 mx-auto">

@@ -1,15 +1,14 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Head from 'next/head';
+import Masonry from 'react-masonry-css'
 import styled from 'styled-components';
-import { Col, Container, Row, Button, Stack, Form } from 'react-bootstrap';
+import { Col, Container, Row, Button, Stack, Form, Card } from 'react-bootstrap';
 import Slider from "react-slick";
-import Header from '../../src/components/Header'
-import Footer from "../../src/components/Footer";
 import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
 import team from '../../src/assets/data/team.json';
 import reviews from '../../src/assets/data/review.json';
+import masonry from '../../src/assets/data/masonary.json';
 import Link from "next/link";
 import { BtnGreen } from "../../src/components/BtnGreen";
 
@@ -55,6 +54,12 @@ const teamDisplay = team.map(member => {
     </Col>
   );
 });
+
+const masonryDisplay = masonry.map(element => {
+  return(
+    <Card.Img src={"https://drive.google.com/uc?export=view&id=" + element.id} key={element.id} alt={"Image preview"} className="img-fluid pb-1" />
+  );
+})
 
 const reviewDisplay = reviews.map(review => {
   return(
@@ -105,6 +110,12 @@ const Highlight = () => {
   );
 }
 
+const breakpointColumnsObj = {
+  default: 3,
+  700: 2,
+  500: 1
+};
+
 export default function Home() {
   // Carrousel
   const settings = {
@@ -137,12 +148,11 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       {/* Presentation */}
       <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
+            <img src="https://drive.google.com/uc?export=view&id=1ncS8AN7xsO8nrGPCMwGMYP4c6os1sdmM" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
@@ -176,7 +186,7 @@ export default function Home() {
             </Stack>
           </Col>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
+            <img src="https://drive.google.com/uc?export=view&id=10RDBBwoeNMMQXaVQ4kpWnyw88qa869Kj" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
         </Row>
       </Container>
@@ -245,7 +255,7 @@ export default function Home() {
       <Container className='flex-lg-row-reverse align-items-center g-5 py-5'>
         <Row className='flex-lg-row-reverse align-items-center g-5 py-5'>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
+            <img src="https://drive.google.com/uc?export=view&id=1eSNrY8h0AMyAiK5Y5f7Mk_rMjN0qAxf9" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
           <Col className='col-lg-6'>
             <div className="lc-block mb-3">
@@ -266,18 +276,26 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-
+      {/* Equipo */}
       <Container>
         <h1 className='fw-bold h2 text-center pb-5'>Conoce al equipo</h1>
         <Row>
           { teamDisplay }
         </Row>
       </Container>
-
+      {/* Gallery */}
       <Container>
         <h1 className='fw-bold h2 text-center pb-5'>Galería de la obra</h1>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column">
+            { masonryDisplay }
+        </Masonry>
       </Container>
 
+      <h1 className='fw-bold h2 text-center pt-5'>Testimonios</h1>
+      <h1 className='fw-bold h5 text-center pb-5'>Voces de clientes nacionales</h1>
       <Slider {...settings}>
         { reviewDisplay }
       </Slider>
@@ -311,11 +329,10 @@ export default function Home() {
             </div>
           </Col>
           <Col className='col-10 col-sm-8 col-lg-6'>
-            <img src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
+            <img src="https://drive.google.com/uc?export=view&id=10RDBBwoeNMMQXaVQ4kpWnyw88qa869Kj" className="d-block mx-lg-auto img-fluid rounded" alt="" loading="lazy" />
           </Col>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 }

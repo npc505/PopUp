@@ -11,11 +11,9 @@ import { HiArrowsUpDown } from "react-icons/hi2";
 export default function Marketplace() {
   return(
     <>
-      <Header />
       <Container className="mt-5">
         
       </Container>
-      <Footer />
     </>
   );
 }

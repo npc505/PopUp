@@ -2,8 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components';
 import { Col, Container, Row, Button, Badge, Form, Stack } from 'react-bootstrap';
-import Header from '../../src/components/Header'
-import Footer from "../../src/components/Footer";
 import { TbWorld } from "react-icons/tb";
 import { BsBricks } from "react-icons/bs";
 import { HiArrowsUpDown } from "react-icons/hi2";
@@ -28,14 +26,13 @@ const ContainerW50 = styled(Row)`
 export default function Investment() {
   return(
     <>
-      <Header />
       <ContainerW50 className="mx-auto border p-5 mt-5">
         <h1 className="fw-bold h3">Antes de Invertir</h1>
         <p>
             Tienes que completar unos pasos para asegurarnos que todo salga bien.
         </p>
         <Row className="pt-3">
-            <Col lg={6}>
+            <Col className="pb-4" lg={6}>
                 <TbWorld className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
                 <p className="fw-bold">
                     Verificación KYC
@@ -57,9 +54,9 @@ export default function Investment() {
             </Col>
         </Row>
       </ContainerW50>
-      <Container style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <Container style={{ paddingTop: '5rem', paddingBottom: '7rem' }}>
         <Row>
-            <Col lg={6}>
+            <Col className="pb-5" lg={6}>
                 <TokenCard></TokenCard>
             </Col>
             <Col lg={6}>
@@ -129,7 +126,6 @@ export default function Investment() {
             </Col>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 }

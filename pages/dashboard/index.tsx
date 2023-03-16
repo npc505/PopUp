@@ -1,21 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styled from "styled-components";
 import classes from "../../styles/Dashboard.module.css";
-import {
-  Col,
-  Container,
-  Row,
-  Button,
-  Badge,
-  Form,
-  Stack,
-} from "react-bootstrap";
-import Header from "../../src/components/Header";
-import Footer from "../../src/components/Footer";
-import { TbWorld } from "react-icons/tb";
-import { BsBricks } from "react-icons/bs";
-import { HiArrowsUpDown } from "react-icons/hi2";
+import { Col, Container, Row, Stack } from "react-bootstrap";
 import TokenCard from "../../src/components/TokenCard";
 import { BtnGreen } from "../../src/components/BtnGreen";
 import Card from "../../src/components/Card/Card";

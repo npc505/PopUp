@@ -45,6 +45,39 @@ export default function Marketplace() {
 
           <Card className={`${classes["grid-item7"]}`}>
             <h4 className={`${classes["grid-text"]}`}>Progreso de la obra</h4>
+
+            <div className="m-4 d-flex flex-column justify-content-center align-items-center">
+              <div className="position-relative rounded-pill bg-black" style={{ width: "100%", height: "15px" }}>
+                <div className="position-absolute rounded-pill top-0 start-0" style={{ width: "100%", height: "15px", backgroundColor: "#ffad0d" }} />
+                <div className="position-absolute rounded-pill top-0 start-0" style={{ width: "75%", height: "15px", backgroundColor: "#ff3236" }} />
+                <div className="position-absolute rounded-pill top-0 start-0" style={{ width: "50%", height: "15px", backgroundColor: "#f5841f" }} />
+                <div className="position-absolute rounded-pill top-0 start-0" style={{ width: "25%", height: "15px", backgroundColor: "#5fc92e" }} />
+              </div>
+
+              <div className="p-4 w-100 fw-light">
+                <table className="w-100 table">
+                  <tr>
+                    <td className="d-flex align-items-center py-2"><div className="rounded-circle me-2" style={{ height: "16px", width: "16px", backgroundColor: "#5fc92e" }} /> Fase 1 - Cimientos</td>
+                    <td>Completado</td>
+                  </tr>
+
+                  <tr>
+                    <td className="d-flex align-items-center py-2"><div className="rounded-circle me-2" style={{ height: "16px", width: "16px", backgroundColor: "#f5841f" }} /> Fase 2 - Obra Negra</td>
+                    <td>En proceso</td>
+                  </tr>
+
+                  <tr>
+                    <td className="d-flex align-items-center py-2"><div className="rounded-circle me-2" style={{ height: "16px", width: "16px", backgroundColor: "#ff3236" }} /> Fase 3 - Plomería y Electricidad</td>
+                    <td>Demorado</td>
+                  </tr>
+
+                  <tr>
+                    <td className="d-flex align-items-center py-2"><div className="rounded-circle me-2" style={{ height: "16px", width: "16px", backgroundColor: "#ffad0d" }} /> Fase 4 - Ventanas y puertas</td>
+                    <td>Pendiente</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
           </Card>
 
           <div className={`${classes["grid-item8"]}`}>

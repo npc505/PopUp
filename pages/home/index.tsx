@@ -11,6 +11,8 @@ import reviews from '../../src/assets/data/review.json';
 import masonry from '../../src/assets/data/masonary.json';
 import Link from "next/link";
 import { BtnGreen } from "../../src/components/BtnGreen";
+import { useCallback } from "react";
+import { useSmartContract } from "../../src/lib/providers/SmartContractProvider";
 
 const ProfileImage = styled.img`
   border-radius: 50%;

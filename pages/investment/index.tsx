@@ -7,6 +7,9 @@ import { BsBricks } from "react-icons/bs";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import TokenCard from "../../src/components/TokenCard";
 import { BtnGreen } from "../../src/components/BtnGreen";
+import { useState, useCallback } from "react"
+import { useSmartContract } from "../../src/lib/providers/SmartContractProvider";
+import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 const ProfileImage = styled.img`
   border-radius: 50%;
@@ -24,6 +27,47 @@ const ContainerW50 = styled(Row)`
 `;
 
 export default function Investment() {
+    const { address } = useAccount()
+    const [amount, setAmount] = useState(0)
+    //const { write } = useSmartContract();
+    /*const mint = useCallback(()=>{
+        write("mint", [address, amount , 0])
+        .then((r) => (r as any).write())
+        .catch((e) => console.error(e))
+    },[write, address, amount])
+    */
+    const { config } = usePrepareContractWrite({
+        address: '0x7E5d1bd04280E1Ca2c5Aa2567fA5184094Fc87E5',
+        abi: [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_mintAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_pid",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "mint",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+        ],
+        functionName: 'mint',
+        args: [address as any, amount as any , 0 as any],
+    })
+    const { write } = useContractWrite(config)
+    console.log(write);
   return(
     <>
       <ContainerW50 className="mx-auto border p-5 mt-5">
@@ -76,7 +120,7 @@ export default function Investment() {
                             <Col xs={8}>
                                 <Form.Group controlId="formGridCity">
                                     <Form.Label className="fw-bold">Amount</Form.Label>
-                                    <Form.Control />
+                                    <Form.Control onChange={({target})=>setAmount(parseInt(target.value))}/>
                                     <Form.Text className="text-muted">
                                         Balance <Badge pill bg="light" text="dark">$1,000,000.00</Badge>
                                     </Form.Text>
@@ -119,7 +163,7 @@ export default function Investment() {
                                 <p>1 USDT</p>
                             </div>
                         </Container>
-                        <BtnGreen className='w-100 my-2' style={{ height: '3rem' }}>Comprar con Metamask</BtnGreen>
+                        <BtnGreen onClick={write} className='w-100 my-2' style={{ height: '3rem' }}>Comprar con Metamask</BtnGreen>
                         <BtnGreen className='w-100 my-2' style={{ height: '3rem' }}>Comprar con tarjeta de crédito</BtnGreen>
                     </Form>
                 </Container>

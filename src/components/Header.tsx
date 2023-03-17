@@ -35,7 +35,7 @@ export default function Header() {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/investment">Investment</Nav.Link>
-              <Nav.Link href="#action2">Dashboard</Nav.Link>
+              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
               <Nav.Link href="/marketplace">Marketplace</Nav.Link>
             </Nav>
             <div className='d-block d-sm-none m-0 mt-1'>

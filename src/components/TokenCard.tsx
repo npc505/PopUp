@@ -9,7 +9,7 @@ const CardContainer = styled(Container)`
   background: conic-gradient(#beb024, #a9d9ce 40deg, #2a4038 150deg, #beb024);
 `;
 
-export default function TokenCard(props) {
+export default function TokenCard(props: any) {
   if (props.type === "grid") {
     return (
       <CardContainer

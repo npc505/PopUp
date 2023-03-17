@@ -116,65 +116,67 @@ export default function Dashboard() {
 
               <div className="p-4 w-100 fw-light">
                 <table className="w-100 table">
-                  <tr>
-                    <td className="d-flex align-items-center py-2">
-                      <div
-                        className="rounded-circle me-2"
-                        style={{
-                          height: "16px",
-                          width: "16px",
-                          backgroundColor: "#5fc92e",
-                        }}
-                      />{" "}
-                      Fase 1 - Cimientos
-                    </td>
-                    <td>Completado</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td className="d-flex align-items-center py-2">
+                        <div
+                          className="rounded-circle me-2"
+                          style={{
+                            height: "16px",
+                            width: "16px",
+                            backgroundColor: "#5fc92e",
+                          }}
+                        />{" "}
+                        Fase 1 - Cimientos
+                      </td>
+                      <td>Completado</td>
+                    </tr>
 
-                  <tr>
-                    <td className="d-flex align-items-center py-2">
-                      <div
-                        className="rounded-circle me-2"
-                        style={{
-                          height: "16px",
-                          width: "16px",
-                          backgroundColor: "#f5841f",
-                        }}
-                      />{" "}
-                      Fase 2 - Obra Negra
-                    </td>
-                    <td>En proceso</td>
-                  </tr>
+                    <tr>
+                      <td className="d-flex align-items-center py-2">
+                        <div
+                          className="rounded-circle me-2"
+                          style={{
+                            height: "16px",
+                            width: "16px",
+                            backgroundColor: "#f5841f",
+                          }}
+                        />{" "}
+                        Fase 2 - Obra Negra
+                      </td>
+                      <td>En proceso</td>
+                    </tr>
 
-                  <tr>
-                    <td className="d-flex align-items-center py-2">
-                      <div
-                        className="rounded-circle me-2"
-                        style={{
-                          height: "16px",
-                          width: "16px",
-                          backgroundColor: "#ff3236",
-                        }}
-                      />{" "}
-                      Fase 3 - Plomería y Electricidad
-                    </td>
-                    <td>Demorado</td>
-                  </tr>
+                    <tr>
+                      <td className="d-flex align-items-center py-2">
+                        <div
+                          className="rounded-circle me-2"
+                          style={{
+                            height: "16px",
+                            width: "16px",
+                            backgroundColor: "#ff3236",
+                          }}
+                        />{" "}
+                        Fase 3 - Plomería y Electricidad
+                      </td>
+                      <td>Demorado</td>
+                    </tr>
 
-                  <tr>
-                    <td className="d-flex align-items-center py-2">
-                      <div
-                        className="rounded-circle me-2"
-                        style={{
-                          height: "16px",
-                          width: "16px",
-                          backgroundColor: "#ffad0d",
-                        }}
-                      />{" "}
-                      Fase 4 - Ventanas y puertas
-                    </td>
-                    <td>Pendiente</td>
-                  </tr>
+                    <tr>
+                      <td className="d-flex align-items-center py-2">
+                        <div
+                          className="rounded-circle me-2"
+                          style={{
+                            height: "16px",
+                            width: "16px",
+                            backgroundColor: "#ffad0d",
+                          }}
+                        />{" "}
+                        Fase 4 - Ventanas y puertas
+                      </td>
+                      <td>Pendiente</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

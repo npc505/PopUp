@@ -5,7 +5,7 @@ import { BsStars } from "react-icons/bs";
 const CardContainer = styled(Container)`
   width: 60%;
   height: 100%;
-  border-radius: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: end;

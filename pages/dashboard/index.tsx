@@ -39,11 +39,11 @@ export default function Dashboard() {
 
           <Card className={`${classes["grid-item5"]}`}>
             <h4 className={`${classes["grid-title"]}`}>Tus tokens</h4>
-            <p className={`${classes["grid-text"]}`}>2 vouchers</p>
+            <p className={`${classes["grid-text"]}`}>2 Vouchers</p>
           </Card>
 
           <Card className={`${classes["grid-item6"]} `}>
-            <ProgressCircle percentage="35" />
+            <ProgressCircle percentage="73" />
             <p className={`${classes["description"]} `}>
               Rendimientos proyectados para esta obra basado en tu inversión.
             </p>

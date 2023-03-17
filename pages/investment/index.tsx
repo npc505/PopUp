@@ -1,15 +1,15 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components';
-import { Col, Container, Row, Button, Badge, Form, Stack } from 'react-bootstrap';
+import { Col, Container, Row, Button, Badge, Form, Stack, Modal } from 'react-bootstrap';
 import { TbWorld } from "react-icons/tb";
 import { BsBricks } from "react-icons/bs";
 import { HiArrowsUpDown } from "react-icons/hi2";
 import TokenCard from "../../src/components/TokenCard";
 import { BtnGreen } from "../../src/components/BtnGreen";
-import { useState, useCallback } from "react"
-import { useSmartContract } from "../../src/lib/providers/SmartContractProvider";
-import { useAccount, useContractWrite, usePrepareContractWrite } from "wagmi";
+import React, {useState} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const ProfileImage = styled.img`
   border-radius: 50%;
@@ -27,47 +27,9 @@ const ContainerW50 = styled(Row)`
 `;
 
 export default function Investment() {
-    const { address } = useAccount()
-    const [amount, setAmount] = useState(0)
-    //const { write } = useSmartContract();
-    /*const mint = useCallback(()=>{
-        write("mint", [address, amount , 0])
-        .then((r) => (r as any).write())
-        .catch((e) => console.error(e))
-    },[write, address, amount])
-    */
-    const { config } = usePrepareContractWrite({
-        address: '0x7E5d1bd04280E1Ca2c5Aa2567fA5184094Fc87E5',
-        abi: [
-            {
-                "inputs": [
-                    {
-                        "internalType": "address",
-                        "name": "_to",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "_mintAmount",
-                        "type": "uint256"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "_pid",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "mint",
-                "outputs": [],
-                "stateMutability": "payable",
-                "type": "function"
-            },
-        ],
-        functionName: 'mint',
-        args: [address as any, amount as any , 0 as any],
-    })
-    const { write } = useContractWrite(config)
-    console.log(write);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
   return(
     <>
       <ContainerW50 className="mx-auto border p-5 mt-5">
@@ -84,7 +46,78 @@ export default function Investment() {
                 <p>
                     Esta verificación es conducida por una compañia independiente para asegurarnos de cumplir con las normas y regulaciones.
                 </p>
-                <BtnGreen>Completar</BtnGreen>
+                <BtnGreen onClick={handleShow}>Completar</BtnGreen>
+                <Modal show={show} onHide={handleClose} >
+          <Modal.Body><h1 className="fw-bold h3">Antes de Invertir</h1>
+        <p>
+            Tienes que completar unos pasos para asegurarnos que todo salga bien.
+        </p>
+        <Row className="pt-3">
+        <Col className="pb-4" lg={6}>
+        <TbWorld className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
+        <p className="fw-bold">
+                    Verificación KYC
+                </p>
+                <p>
+                    Esta verificación es conducida por una compañia independiente para asegurarnos de cumplir con las normas y regulaciones.
+                </p>
+                <BtnGreen>Descargar</BtnGreen>
+                <br /><br /><br />
+                <form class="form1" action="">
+                    <p>Selecciona o suelta tu archivo</p>
+                    <input type="file" accept="image/*"></input>
+
+                </form>
+                <br/>
+                <BtnGreen>Subir</BtnGreen>
+                <Form className='d-flex'>
+              <Form.Group className="mb-3" controlId="formBasic">
+                <br/><br/>
+                <Form.Control type="name" placeholder="Nombre Completo" />
+              </Form.Group>
+          </Form>
+                </Col>
+            <Col lg={6}>
+
+                <BsBricks className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
+                <p className="fw-bold">
+                    Solicitud de Inversión
+                </p>
+                <p>
+                    Este documento se requiere para solicitar la inversión.
+                </p>
+                <br /><br /><br />
+                <BtnGreen>Solicitar</BtnGreen>
+                <br /><br />
+                <br/>
+                <form class="form1" action="">
+                    <p>Selecciona o suelta tu archivo</p>
+                    <input type="file" accept="image/*"></input>
+
+                </form>
+                <br/>
+                <BtnGreen>Subir</BtnGreen>
+                <Form className='d-flex'>
+              <Form.Group className="mb-3" controlId="formBasic">
+                <br/><br/>
+                <Form.Control type="name" placeholder="RFC" />
+              </Form.Group>
+          </Form>
+            </Col>
+            </Row>
+
+                </Modal.Body>
+                
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Cerrar
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Guardar Cambios
+            </Button>
+            
+          </Modal.Footer>
+        </Modal>
             </Col>
             <Col lg={6}>
                 <BsBricks className="rounded-circle p-2 mb-4" size={42} color={'#FEFEFE'} style={{backgroundColor: '#BEB024'}} />
@@ -120,7 +153,7 @@ export default function Investment() {
                             <Col xs={8}>
                                 <Form.Group controlId="formGridCity">
                                     <Form.Label className="fw-bold">Amount</Form.Label>
-                                    <Form.Control onChange={({target})=>setAmount(parseInt(target.value))}/>
+                                    <Form.Control />
                                     <Form.Text className="text-muted">
                                         Balance <Badge pill bg="light" text="dark">$1,000,000.00</Badge>
                                     </Form.Text>
@@ -163,7 +196,7 @@ export default function Investment() {
                                 <p>1 USDT</p>
                             </div>
                         </Container>
-                        <BtnGreen onClick={write} className='w-100 my-2' style={{ height: '3rem' }}>Comprar con Metamask</BtnGreen>
+                        <BtnGreen className='w-100 my-2' style={{ height: '3rem' }}>Comprar con Metamask</BtnGreen>
                         <BtnGreen className='w-100 my-2' style={{ height: '3rem' }}>Comprar con tarjeta de crédito</BtnGreen>
                     </Form>
                 </Container>
